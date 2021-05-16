@@ -17,6 +17,10 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
+// the answer is scope, the explanation is that the 'external' variable is in global scope, which means essentially everything can use it,
+// as for the 'internal' variable, it is in fucntional scope, which means that only the function can call and excecute that variable.
+// It goes down the line as if the global scope is the parent and scopes inside of that are sub sections of the parent, aka children.
+
 
 
 
@@ -27,13 +31,15 @@ myFunction();
     2. Use a counter to return the summation of that number. 
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
+let num = 0
+const summation = (intg) => {
+      for(let i = 0; i < intg; i++){
+        return num++
+      }
+  };
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
-  }
+ console.log(summation(4))
  
-
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
 
@@ -56,9 +62,13 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  const displayNames = [];
+
+  zooAnimals.forEach(function(obj) {
+    displayNames.push(obj.animal_name, obj.scientific_name);
+  });
+
+  console.log(displayNames);
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -67,20 +77,22 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  const littleNames = (low) => {
+    return 
   }
+
+  const lowerCaseNames = zooAnimals.map((zooAnimals.animal_name).toLowerCase);
   
+  console.log(lowerCaseNames)
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
-  
+  const lowPopulationAnimals = zooAnimals.filter((jimmyNeutron) => {return jimmyNeutron.population <= 5});
+  console.log(lowPopulationAnimals);
+
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -88,9 +100,12 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  const USApop = zooAnimals.reduce((accumulator, pops) => {
+    console.log(accumulator);
+    return accumulator + pops.population;
+  }, 0);
+
+  console.log(USApop);
   
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
@@ -202,21 +217,21 @@ class CuboidMakerTwo{
 
 
   /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
-  function foo(){
-    //console.log('its working');
-    return 'bar';
-  }
-  export default{
-    foo,
-    summation,
-    animalNames,
-    lowerCaseNames,
-    lowPopulationAnimals,
-    USApop,
-    consume, 
-    add,
-    multiply,
-    greeting,
-    CuboidMaker,
-    CuboidMakerTwo
-  }
+  // function foo(){
+  //   //console.log('its working');
+  //   return 'bar';
+  // }
+  // export default{
+  //   foo,
+  //   summation,
+  //   animalNames,
+  //   lowerCaseNames,
+  //   lowPopulationAnimals,
+  //   USApop,
+  //   consume, 
+  //   add,
+  //   multiply,
+  //   greeting,
+  //   CuboidMaker,
+  //   CuboidMakerTwo
+  // }
